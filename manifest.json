@@ -1,0 +1,25 @@
+{
+  "name": "My GitHub PWA",
+  "short_name": "GitHub PWA",
+  "description": "A Progressive Web App hosted on GitHub Pages with continuous deployment",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#24292f",
+  "theme_color": "#24292f",
+  "orientation": "any",
+  "scope": ".",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

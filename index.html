@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="My GitHub PWA - A Progressive Web App hosted on GitHub Pages" />
+    <meta name="theme-color" content="#24292f" />
+
+    <!-- PWA manifest -->
+    <link rel="manifest" href="manifest.json" />
+
+    <!-- iOS PWA support -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="My GitHub PWA" />
+    <link rel="apple-touch-icon" href="icons/icon-192.png" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png" />
+
+    <title>My GitHub PWA</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-inner">
+        <svg class="logo" viewBox="0 0 16 16" aria-hidden="true">
+          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
+            0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13
+            -.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87
+            2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95
+            0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21
+            2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04
+            2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82
+            2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48
+            0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+        </svg>
+        <span class="header-title">My GitHub PWA</span>
+        <button id="installBtn" class="install-btn" hidden>Install App</button>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="hero">
+        <div class="hero-content">
+          <h1>Welcome to My GitHub PWA</h1>
+          <p class="hero-subtitle">
+            A Progressive Web App hosted on GitHub Pages with continuous deployment.
+          </p>
+          <div class="badge-row">
+            <span class="badge badge-pwa">PWA</span>
+            <span class="badge badge-offline">Offline Ready</span>
+            <span class="badge badge-fast">Fast</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="features">
+        <h2>Features</h2>
+        <div class="card-grid">
+          <div class="card">
+            <div class="card-icon">📱</div>
+            <h3>Installable</h3>
+            <p>Install this app on your device for a native app-like experience.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">⚡</div>
+            <h3>Fast</h3>
+            <p>Assets are cached by the service worker for lightning-fast load times.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">🔌</div>
+            <h3>Offline Ready</h3>
+            <p>Works even without an internet connection thanks to service worker caching.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">🚀</div>
+            <h3>Auto Deploy</h3>
+            <p>Every push to the main branch automatically deploys to GitHub Pages.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="status-section">
+        <h2>App Status</h2>
+        <div class="status-card">
+          <div class="status-row">
+            <span class="status-label">Service Worker</span>
+            <span id="swStatus" class="status-value status-checking">Checking…</span>
+          </div>
+          <div class="status-row">
+            <span class="status-label">Network</span>
+            <span id="networkStatus" class="status-value">Online</span>
+          </div>
+          <div class="status-row">
+            <span class="status-label">Cache Version</span>
+            <span id="cacheVersion" class="status-value">v1</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>
+        Hosted on
+        <a href="https://pages.github.com" target="_blank" rel="noopener noreferrer">GitHub Pages</a>
+        &bull; Deployed via
+        <a href="https://github.com/features/actions" target="_blank" rel="noopener noreferrer">GitHub Actions</a>
+      </p>
+    </footer>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
