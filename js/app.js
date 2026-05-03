@@ -56,13 +56,12 @@ const isStandalone =
   window.navigator.standalone === true ||
   window.matchMedia('(display-mode: standalone)').matches;
 
-if (isIos && !isStandalone) {
+if (isIos && !isStandalone && iosBanner && iosCloseBtn) {
   iosBanner.hidden = false;
+  iosCloseBtn.addEventListener('click', () => {
+    iosBanner.hidden = true;
+  });
 }
-
-iosCloseBtn.addEventListener('click', () => {
-  iosBanner.hidden = true;
-});
 
 /* =========================================================
    Network status
