@@ -60,15 +60,17 @@ a:hover {
 .header {
   background-color: var(--color-header-bg);
   border-bottom: 1px solid var(--color-border);
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 100;
+  padding-top: env(safe-area-inset-top);
 }
 
 .header-inner {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 12px 24px;
+  padding: 12px max(24px, env(safe-area-inset-right)) 12px max(24px, env(safe-area-inset-left));
   display: flex;
   align-items: center;
   gap: 12px;
@@ -110,7 +112,7 @@ a:hover {
 .nav {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 max(24px, env(safe-area-inset-right)) 0 max(24px, env(safe-area-inset-left));
   display: flex;
   gap: 4px;
   border-top: 1px solid var(--color-border);
@@ -435,7 +437,7 @@ a:hover {
    ========================================================= */
 @media (max-width: 600px) {
   .header-inner {
-    padding: 10px 16px;
+    padding: 10px max(16px, env(safe-area-inset-right)) 10px max(16px, env(safe-area-inset-left));
   }
 
   .main {
