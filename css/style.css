@@ -105,6 +105,39 @@ a:hover {
 }
 
 /* =========================================================
+   Nav
+   ========================================================= */
+.nav {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  gap: 4px;
+  border-top: 1px solid var(--color-border);
+}
+
+.nav-link {
+  display: inline-block;
+  padding: 8px 14px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  border-bottom: 2px solid transparent;
+  transition: color var(--transition), border-color var(--transition);
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.nav-link--active {
+  color: var(--color-text);
+  border-bottom-color: var(--color-accent);
+}
+
+/* =========================================================
    Main
    ========================================================= */
 .main {
@@ -280,6 +313,64 @@ a:hover {
   font-size: 0.8125rem;
   color: var(--color-text-muted);
   border-top: 1px solid var(--color-border);
+}
+
+/* =========================================================
+   Capabilities page
+   ========================================================= */
+.hero--compact {
+  margin-bottom: 40px;
+}
+
+.capabilities-section {
+  margin-bottom: 56px;
+}
+
+.capabilities-heading {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.capabilities-heading--can {
+  color: var(--color-success);
+}
+
+.capabilities-heading--cannot {
+  color: #f78166;
+}
+
+.cap-icon {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.cap-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.cap-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 24px;
+  transition: border-color var(--transition), transform var(--transition);
+}
+
+.cap-card:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+.cap-card--cannot:hover {
+  border-color: #f78166;
 }
 
 /* =========================================================

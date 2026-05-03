@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="PWA Capabilities — what a Progressive Web App can and cannot do" />
+    <meta name="theme-color" content="#24292f" />
+
+    <!-- PWA manifest -->
+    <link rel="manifest" href="manifest.json" />
+
+    <!-- iOS PWA support -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="My GitHub PWA" />
+    <link rel="apple-touch-icon" href="icons/icon-192.png" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png" />
+
+    <title>PWA Capabilities — My GitHub PWA</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-inner">
+        <svg class="logo" viewBox="0 0 16 16" aria-hidden="true">
+          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
+            0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13
+            -.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87
+            2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95
+            0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21
+            2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04
+            2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82
+            2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48
+            0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+        </svg>
+        <span class="header-title">My GitHub PWA</span>
+        <button id="installBtn" class="install-btn" hidden>Install App</button>
+      </div>
+      <nav class="nav" aria-label="Site navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="capabilities.html" class="nav-link nav-link--active" aria-current="page">PWA Capabilities</a>
+      </nav>
+    </header>
+
+    <main class="main">
+      <section class="hero hero--compact">
+        <div class="hero-content">
+          <h1>PWA Capabilities</h1>
+          <p class="hero-subtitle">
+            A clear overview of what Progressive Web Apps can — and cannot — do today.
+          </p>
+        </div>
+      </section>
+
+      <!-- CAN DO -->
+      <section class="capabilities-section">
+        <h2 class="capabilities-heading capabilities-heading--can">
+          <span class="cap-icon">✅</span> What a PWA Can Do
+        </h2>
+        <div class="cap-grid">
+          <div class="cap-card">
+            <div class="card-icon">📲</div>
+            <h3>Install to Home Screen</h3>
+            <p>Users can add the PWA to their device's home screen, giving it an app-like icon and launch experience without visiting an app store.</p>
+          </div>
+          <div class="cap-card">
+            <div class="card-icon">🔌</div>
+            <h3>Work Offline</h3>
+            <p>Service workers intercept network requests and serve cached assets, letting the app function even without an internet connection.</p>
+          </div>
+          <div class="cap-card">
+            <div class="card-icon">🔔</div>
+            <h3>Push Notifications</h3>
+            <p>With user permission, PWAs can receive push notifications from a server — keeping users informed even when the app is not open.</p>
+          </div>
+          <div class="cap-card">
+            <div class="card-icon">📍</div>
+            <h3>Geolocation</h3>
+            <p>Access the device's GPS or network-based location (with user permission) to provide location-aware features.</p>
+          </div>
+          <div class="cap-card">
+            <div class="card-icon">📷</div>
+            <h3>Camera &amp; Microphone</h3>
+            <p>Use the device camera and microphone via the MediaDevices API (with user permission) for photo capture, video calls, and voice input.</p>
+          </div>
+          <div class="cap-card">
+            <div class="card-icon">🔄</div>
+            <h3>Background Sync</h3>
+            <p>Queue actions (e.g., form submissions) while offline and automatically replay them once connectivity is restored.</p>
+          </div>
+          <div class="cap-card">
+            <div class="card-icon">📂</div>
+            <h3>File System Access</h3>
+            <p>The File System Access API allows reading and writing files on the user's device (with explicit permission), enabling desktop-class editing experiences.</p>
+          </div>
+          <div class="cap-card">
+            <div class="card-icon">🔗</div>
+            <h3>Web Share</h3>
+            <p>Invoke the native OS share sheet to share URLs, text, or files to other apps installed on the device.</p>
+          </div>
+          <div class="cap-card">
+            <div class="card-icon">⚡</div>
+            <h3>Fast Loading</h3>
+            <p>Pre-cached assets load instantly on repeat visits, offering performance that rivals — or exceeds — native apps.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CANNOT DO -->
+      <section class="capabilities-section">
+        <h2 class="capabilities-heading capabilities-heading--cannot">
+          <span class="cap-icon">❌</span> What a PWA Cannot Do
+        </h2>
+        <div class="cap-grid">
+          <div class="cap-card cap-card--cannot">
+            <div class="card-icon">📦</div>
+            <h3>App Store Distribution</h3>
+            <p>PWAs are not natively listed in the Apple App Store or Google Play Store without additional packaging (e.g., Trusted Web Activity / Capacitor).</p>
+          </div>
+          <div class="cap-card cap-card--cannot">
+            <div class="card-icon">🔒</div>
+            <h3>Full iOS Support</h3>
+            <p>Safari on iOS has historically lagged behind: background sync, Web Bluetooth, and some notification features are absent or limited on iOS devices.</p>
+          </div>
+          <div class="cap-card cap-card--cannot">
+            <div class="card-icon">📡</div>
+            <h3>Bluetooth &amp; NFC</h3>
+            <p>Web Bluetooth and Web NFC APIs are not universally supported. Safari does not support them, limiting their real-world applicability.</p>
+          </div>
+          <div class="cap-card cap-card--cannot">
+            <div class="card-icon">📞</div>
+            <h3>Contacts &amp; SMS Access</h3>
+            <p>PWAs cannot read the device address book or send / receive SMS messages, unlike native apps on Android and iOS.</p>
+          </div>
+          <div class="cap-card cap-card--cannot">
+            <div class="card-icon">🔧</div>
+            <h3>Deep System Integration</h3>
+            <p>Features such as modifying system settings, running persistent background services, or inter-app communication are not available to PWAs.</p>
+          </div>
+          <div class="cap-card cap-card--cannot">
+            <div class="card-icon">🖥️</div>
+            <h3>Cross-Origin Data Access</h3>
+            <p>The browser's same-origin policy restricts PWAs from reading data from other origins without explicit CORS headers from those servers.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>
+        Hosted on
+        <a href="https://pages.github.com" target="_blank" rel="noopener noreferrer">GitHub Pages</a>
+        &bull; Deployed via
+        <a href="https://github.com/features/actions" target="_blank" rel="noopener noreferrer">GitHub Actions</a>
+      </p>
+    </footer>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
