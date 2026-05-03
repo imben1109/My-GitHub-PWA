@@ -1,7 +1,8 @@
-const CACHE_NAME = 'my-github-pwa-v1';
+const CACHE_NAME = 'my-github-pwa-v2';
 const ASSETS_TO_CACHE = [
   '.',
   'index.html',
+  'capabilities.html',
   'manifest.json',
   'css/style.css',
   'js/app.js',
