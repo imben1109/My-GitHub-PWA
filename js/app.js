@@ -46,6 +46,25 @@ window.addEventListener('appinstalled', () => {
 });
 
 /* =========================================================
+   iOS install banner
+   ========================================================= */
+const iosBanner = document.getElementById('iosInstallBanner');
+const iosCloseBtn = document.getElementById('iosInstallClose');
+
+const isIos = /iphone|ipad|ipod/i.test(navigator.userAgent);
+const isStandalone =
+  window.navigator.standalone === true ||
+  window.matchMedia('(display-mode: standalone)').matches;
+
+if (isIos && !isStandalone) {
+  iosBanner.hidden = false;
+}
+
+iosCloseBtn.addEventListener('click', () => {
+  iosBanner.hidden = true;
+});
+
+/* =========================================================
    Network status
    ========================================================= */
 const networkStatusEl = document.getElementById('networkStatus');
