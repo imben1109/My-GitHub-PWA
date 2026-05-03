@@ -272,6 +272,63 @@ a:hover {
 }
 
 /* =========================================================
+   iOS install banner
+   ========================================================= */
+.ios-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--color-surface-2);
+  border-top: 1px solid var(--color-border);
+  padding: 16px 20px 20px;
+  z-index: 200;
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.5);
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to   { transform: translateY(0); }
+}
+
+.ios-banner-close {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  background: none;
+  border: none;
+  color: var(--color-text-muted);
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px 6px;
+}
+
+.ios-banner-close:hover {
+  color: var(--color-text);
+}
+
+.ios-banner-title {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  padding-right: 28px;
+}
+
+.ios-banner-steps {
+  list-style: decimal;
+  padding-left: 20px;
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  line-height: 1.8;
+}
+
+.ios-banner-steps strong {
+  color: var(--color-text);
+}
+
+/* =========================================================
    Footer
    ========================================================= */
 .footer {
