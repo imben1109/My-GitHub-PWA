@@ -13,8 +13,10 @@ A [Progressive Web App](https://web.dev/progressive-web-apps/) hosted on [GitHub
 
 The app is automatically deployed to GitHub Pages at:
 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-blue)](https://imben1109.github.io/My-GitHub-PWA/)
+
 ```
-https://<your-username>.github.io/<your-repo-name>/
+https://imben1109.github.io/My-GitHub-PWA/
 ```
 
 ## Project Structure
