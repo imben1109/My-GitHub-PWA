@@ -12,6 +12,8 @@ jobs:
   unit-tests:
     name: Unit Tests
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
 
     steps:
       - name: Checkout
@@ -32,6 +34,8 @@ jobs:
   webkit-e2e-tests:
     name: WebKit (Safari) E2E Tests
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
 
     steps:
       - name: Checkout
