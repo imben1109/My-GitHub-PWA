@@ -1,3 +1,10 @@
+import {
+  updateSwStatus,
+  updateNetworkStatus,
+  detectIos,
+  detectStandalone,
+} from './app-utils.js';
+
 /* =========================================================
    Service Worker registration
    ========================================================= */
@@ -51,10 +58,11 @@ window.addEventListener('appinstalled', () => {
 const iosBanner = document.getElementById('iosInstallBanner');
 const iosCloseBtn = document.getElementById('iosInstallClose');
 
-const isIos = /iphone|ipad|ipod/i.test(navigator.userAgent);
-const isStandalone =
-  window.navigator.standalone === true ||
-  window.matchMedia('(display-mode: standalone)').matches;
+const isIos = detectIos(navigator.userAgent);
+const isStandalone = detectStandalone(
+  window.navigator.standalone,
+  window.matchMedia('(display-mode: standalone)').matches
+);
 
 if (isIos && !isStandalone && iosBanner && iosCloseBtn) {
   iosBanner.hidden = false;
@@ -68,27 +76,10 @@ if (isIos && !isStandalone && iosBanner && iosCloseBtn) {
    ========================================================= */
 const networkStatusEl = document.getElementById('networkStatus');
 
-function updateNetworkStatus() {
-  if (navigator.onLine) {
-    networkStatusEl.textContent = 'Online';
-    networkStatusEl.className = 'status-value status-active';
-  } else {
-    networkStatusEl.textContent = 'Offline';
-    networkStatusEl.className = 'status-value status-inactive';
-  }
+function handleNetworkChange() {
+  updateNetworkStatus(networkStatusEl, navigator.onLine);
 }
 
-window.addEventListener('online', updateNetworkStatus);
-window.addEventListener('offline', updateNetworkStatus);
-updateNetworkStatus();
-
-/* =========================================================
-   Helpers
-   ========================================================= */
-function updateSwStatus(text, cssClass) {
-  const el = document.getElementById('swStatus');
-  if (el) {
-    el.textContent = text;
-    el.className = `status-value ${cssClass}`;
-  }
-}
+window.addEventListener('online', handleNetworkChange);
+window.addEventListener('offline', handleNetworkChange);
+handleNetworkChange();
